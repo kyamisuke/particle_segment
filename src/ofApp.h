@@ -24,4 +24,5 @@ class ofApp : public ofBaseApp{
     ofFbo fbo;
     ofShader shader;
     vector <float> y_noise;
+    ofEasyCam cam;
 };

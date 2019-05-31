@@ -7,6 +7,7 @@ void ofApp::setup(){
     ofSetFrameRate(60);
     ofEnableAlphaBlending();
     ofSetLineWidth(3);
+    ofSetVerticalSync(true);
     
 #ifdef TARGET_OPENGLES
     printf("TARGET_OPENGLES\n");
@@ -104,6 +105,8 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+    //this->cam.begin();
+    
     this->shader.begin();
     // send to GPU
     this->shader.setUniform1f("time", ofGetElapsedTimef());
@@ -116,6 +119,7 @@ void ofApp::draw(){
     this->shader.end();
     
     //this->fbo.draw(0, 0);
+    //this->cam.end();
 }
 
 //--------------------------------------------------------------
